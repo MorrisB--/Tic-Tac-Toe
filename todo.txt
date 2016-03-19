@@ -1,3 +1,4 @@
 TODO
 
 * Print board at beginning of launch
+* Add proper description for this repo
