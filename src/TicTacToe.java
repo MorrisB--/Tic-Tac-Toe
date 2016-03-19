@@ -33,7 +33,7 @@ public class TicTacToe {
 		 */
 		catch (Exception e) {
 			
-			System.out.println("Congrats, you broke the program");
+			System.out.println("Congrats, you broke the program.");
 
 		}
 	}
