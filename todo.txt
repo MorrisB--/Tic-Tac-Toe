@@ -1,3 +1,4 @@
 TODO
 
 * Add proper description for this repo
+* Create array that will store the users values
