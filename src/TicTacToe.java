@@ -32,9 +32,7 @@ public class TicTacToe {
 		 * figured we can just catch everything
 		 */
 		catch (Exception e) {
-			
 			System.out.println("Congrats, you broke the program.");
-
 		}
 	}
 
