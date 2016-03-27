@@ -18,5 +18,14 @@ public class Gameboard {
 	public void computerPlays (){
 		
 	}
+	
+	public static void printModelBoard() {
+		System.out.println("Model Board:");
+		System.out.println("  0 | 1 | 2");
+		System.out.println("-------------");
+		System.out.println("  3 | 4 | 5");
+		System.out.println("-------------");
+		System.out.println("  6 | 7 | 8\n");
+	}
 
 }
