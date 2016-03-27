@@ -5,15 +5,15 @@
  * @author Morris Ballenger
  * @author // ADD NAME HERE \\
  * @author // ADD NAME HERE \\
- * @version 1.0
- * @since 03-19-2016
+ * @version 1.5
+ * @since 03-27-2016
  * 
  */
 
 import java.util.*;
 
 // There will be an excessive amount of comments so when they start editing the code they can understand what is going on
-public class TicTacToe {
+public class TicTacToe extends Gameboard{
 	public static void main(String[] args) {
 		try {
 			Gameboard gameboard = new Gameboard();
@@ -49,14 +49,5 @@ public class TicTacToe {
 		catch (Exception e) {
 			System.out.println("Congrats, you broke the program.");
 		}
-	}
-
-	// This could probably go in the Gameboard class when its done - MB
-	public static void printModelBoard() {
-		System.out.println("  0 | 1 | 2");
-		System.out.println("-------------");
-		System.out.println("  3 | 4 | 5");
-		System.out.println("-------------");
-		System.out.println("  6 | 7 | 8\n");
-	}
+	}	
 }
