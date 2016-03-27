@@ -11,6 +11,10 @@
 
 public class Gameboard {
 	
+	public Gameboard(){
+		char[][] array = new char[3][3];
+	}
+	
 	public void userPlays(int l){
 		
 	}
