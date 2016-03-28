@@ -43,6 +43,11 @@ public class Gameboard {
 	public void computerPlays() {
 
 	}
+	
+	// this may need to be boolean - MB
+	public void checkWins(){
+		
+	}
 
 	public static void printModelBoard() {
 		System.out.println("Model Board:");
