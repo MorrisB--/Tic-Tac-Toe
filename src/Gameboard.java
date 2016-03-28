@@ -40,13 +40,39 @@ public class Gameboard {
 		// print the board afterwards, something like printGameBoard() - MB
 	}
 
+	// MB
+	// 1) Check if location is empty
+	// 2) If the location is empty call checkNeighboors()
+	// 3) Play 'O' at [bestY][bestX]
 	public void computerPlays() {
 
-	}
-	
-	// this may need to be boolean - MB
-	public void checkWins(){
+		int bestX, bestY, chances = 0;
+
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 2; j++) {
+				// can combine these next two statements - MB
+				if (this.array[i][j] == 0) {
+					if (bestWin(this.array, i, j) > chances){
+						chances = bestWin(this.array, i, j);
+						bestX = j;
+						bestY = i;
+					}
+				}
+			}
+		}
 		
+		this.checkWins();
+	}
+
+	public static int bestWin(char[][] a, int i, int j) {
+
+		return 0;
+
+	}
+
+	// this may need to be boolean - MB
+	public void checkWins() {
+
 	}
 
 	public static void printModelBoard() {
