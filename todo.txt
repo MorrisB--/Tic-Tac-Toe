@@ -7,3 +7,5 @@ TODO
 
 * Finish userPlays(int location) method
 * Finish computerPlays() method
+* Add checkWins() method
+* Add printGameBoard() method
