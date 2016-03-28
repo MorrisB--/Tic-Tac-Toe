@@ -7,4 +7,3 @@ TODO
 
 * Finish userPlays(int location) method
 * Finish computerPlays() method
-* Create default constructor (possibly a char array)
