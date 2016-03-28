@@ -9,4 +9,3 @@ TODO
 * Add printGameBoard() method
 * Typo in userPlays(), double check values in "else if" statements
 * Finish bestWins() method
-* Add proper description of each method
