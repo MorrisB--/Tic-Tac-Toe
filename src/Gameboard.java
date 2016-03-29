@@ -93,6 +93,16 @@ public class Gameboard {
 	}
 
 	/**
+	 * This method will check the current Gameboard and play an 'O' in the
+	 * location that will prevent the user from winning on the next move. Note:
+	 * This is essentially the winNow method but instead of looking for two 'X',
+	 * we look for two 'O'. Consider finishing winNow() first. - MB
+	 */
+	public void block() {
+
+	}
+
+	/**
 	 * Looks in array a at location [i][j], and counts the possible wins at that
 	 * location.
 	 * 
