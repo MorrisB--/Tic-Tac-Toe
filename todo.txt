@@ -7,5 +7,4 @@ TODO
 
 
 * Add printGameBoard() method
-* Finish bestWins() method
-	Only runs is block returns false
+* Add checkWins() method
