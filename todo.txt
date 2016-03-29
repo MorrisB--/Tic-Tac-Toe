@@ -7,6 +7,5 @@ TODO
 
 
 * Add printGameBoard() method
-* Create block() method
 * Finish winsNow() method
 * Finish bestWins() method
