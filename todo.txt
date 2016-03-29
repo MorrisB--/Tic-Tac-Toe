@@ -3,9 +3,6 @@ TODO
 * Add proper description for this repo
 
 
-/* Gameboard */
+/* TicTacToe */
 
-
-* Add printGameBoard() method
-* Finish winsNow() method
-* Finish bestWins() method
+* Make loop implement checkWinner() properly
