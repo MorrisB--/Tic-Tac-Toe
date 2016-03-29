@@ -8,4 +8,6 @@ TODO
 
 * Add printGameBoard() method
 * Typo in userPlays(), double check values in "else if" statements
+* Create block() method
+* Finish winsNow() method
 * Finish bestWins() method

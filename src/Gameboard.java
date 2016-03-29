@@ -77,6 +77,22 @@ public class Gameboard {
 	}
 
 	/**
+	 * This method will check the current Gameboard and place an 'O' only if
+	 * that will allow the computer to win in its current move. If not then this
+	 * method will do nothing.
+	 * 
+	 * @return
+	 */
+	public void winNow() {
+		/*
+		 * This could be a lot of if statements if needed. It can start at 0,0.
+		 * If 0,0 is null then check if 0,1 and 0,2 are == 'O'. If so play 'O'
+		 * at 0,0. Do this for each location. There is probably a better way to
+		 * do this. But just so it works.
+		 */
+	}
+
+	/**
 	 * Looks in array a at location [i][j], and counts the possible wins at that
 	 * location.
 	 * 
@@ -103,7 +119,8 @@ public class Gameboard {
 	}
 
 	/**
-	 * Prints a board so the user can reference where they want to play each move.
+	 * Prints a board so the user can reference where they want to play each
+	 * move.
 	 */
 	public static void printModelBoard() {
 		System.out.println("Model Board:");
