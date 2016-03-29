@@ -7,5 +7,5 @@ TODO
 
 
 * Add printGameBoard() method
-* Typo in userPlays(), double check values in "else if" statements
+* Finish winsNow() method
 * Finish bestWins() method

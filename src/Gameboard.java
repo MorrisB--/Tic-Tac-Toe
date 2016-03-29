@@ -39,8 +39,8 @@ public class Gameboard {
 			else
 				System.out.println("You cannot play there!");
 		} else if (l == 6 || l == 7 || l == 8) {
-			if (this.array[1][l] == 0)
-				this.array[1][l] = 'X';
+			if (this.array[2][l] == 0)
+				this.array[2][l] = 'X';
 			else
 				System.out.println("You cannot play there!");
 		}
@@ -77,6 +77,32 @@ public class Gameboard {
 	}
 
 	/**
+	 * This method will check the current Gameboard and place an 'O' only if
+	 * that will allow the computer to win in its current move. If not then this
+	 * method will do nothing.
+	 * 
+	 * @return
+	 */
+	public void winNow() {
+		/*
+		 * This could be a lot of if statements if needed. It can start at 0,0.
+		 * If 0,0 is null then check if 0,1 and 0,2 are == 'O'. If so play 'O'
+		 * at 0,0. Do this for each location. There is probably a better way to
+		 * do this. But just so it works.
+		 */
+	}
+
+	/**
+	 * This method will check the current Gameboard and play an 'O' in the
+	 * location that will prevent the user from winning on the next move. Note:
+	 * This is essentially the winNow method but instead of looking for two 'X',
+	 * we look for two 'O'. Consider finishing winNow() first. - MB
+	 */
+	public void block() {
+
+	}
+
+	/**
 	 * Looks in array a at location [i][j], and counts the possible wins at that
 	 * location.
 	 * 
@@ -103,7 +129,8 @@ public class Gameboard {
 	}
 
 	/**
-	 * Prints a board so the user can reference where they want to play each move.
+	 * Prints a board so the user can reference where they want to play each
+	 * move.
 	 */
 	public static void printModelBoard() {
 		System.out.println("Model Board:");
