@@ -34,13 +34,13 @@ public class Gameboard {
 				System.out.println("You cannot play there!");
 			// next the user needs to be prompted to choose another spot - MB
 		} else if (l == 3 || l == 4 || l == 5) {
-			if (this.array[1][l] == 0)
-				this.array[1][l] = 'X';
+			if (this.array[1][l-3] == 0)
+				this.array[1][l-3] = 'X';
 			else
 				System.out.println("You cannot play there!");
 		} else if (l == 6 || l == 7 || l == 8) {
-			if (this.array[2][l] == 0)
-				this.array[2][l] = 'X';
+			if (this.array[2][l-6] == 0)
+				this.array[2][l-6] = 'X';
 			else
 				System.out.println("You cannot play there!");
 		}
@@ -504,9 +504,16 @@ public class Gameboard {
 			return this.array[0][2];
 
 		// diagonal down
-		if ((this.array[0][0] == this.array[1][1]) && (this.array[1][1] == this.array[2][2]))
-			return this.array[0][0];
-
+		if ((this.array[0][0] == this.array[1][1]) && (this.array[1][1] == this.array[2][2])){
+			//return this.array[0][0];
+			
+			if(this.array[0][0] == 0)
+				return -1;
+			if(this.array[0][0] == 'X')
+				return 1;
+			if(this.array[0][0] == 'O')
+				return 2;
+		}
 		// diagonal up
 		if ((this.array[0][2] == this.array[1][1]) && (this.array[1][1] == this.array[2][0]))
 			return this.array[0][2];
