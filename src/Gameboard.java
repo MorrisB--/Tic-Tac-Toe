@@ -81,7 +81,7 @@ public class Gameboard {
 	 * method will do nothing.
 	 * 
 	 */
-	public boolean winNow() {
+	public boolean winsNow() {
 		/*
 		 * Starting with horizontals (or we can make very complicated if
 		 * statements, with I would vote against because it may make the code
