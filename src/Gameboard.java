@@ -319,16 +319,7 @@ public class Gameboard {
 	}
 
 	/**
-	 * Looks in array a at location [i][j], and counts the possible wins at that
-	 * location.
-	 * 
-	 * @param a
-	 *            the array to be checked.
-	 * @param i
-	 *            the row of the location
-	 * @param j
-	 *            the column of the location
-	 * @return the number of possible wins at that location.
+	 * Looks in all the locations of the array and determines the best spot to play, and plays in that spot. If there is not a best spot to play then it is a stalemate.
 	 */
 	public void bestWin() {
 
