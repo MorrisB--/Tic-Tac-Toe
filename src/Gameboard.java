@@ -319,7 +319,9 @@ public class Gameboard {
 	}
 
 	/**
-	 * Looks in all the locations of the array and determines the best spot to play, and plays in that spot. If there is not a best spot to play then it is a stalemate.
+	 * Looks in all the locations of the array and determines the best spot to
+	 * play, and plays in that spot. If there is not a best spot to play then it
+	 * is a stalemate.
 	 */
 	public void bestWin() {
 
@@ -482,8 +484,49 @@ public class Gameboard {
 	/**
 	 * Check to see if the user or computer won after their current move.
 	 */
-	public void checkWins() {
+	public int checkWinner() {
 
+		// top row
+		if ((this.array[0][0] == this.array[0][1]) && (this.array[0][1] == this.array[0][2]))
+			return this.array[0][0];
+
+		// middle row
+		if ((this.array[1][0] == this.array[1][1]) && (this.array[1][1] == this.array[1][2]))
+			return this.array[1][0];
+
+		// bottom row
+		if ((this.array[2][0] == this.array[2][1]) && (this.array[2][1] == this.array[2][2]))
+			return this.array[2][0];
+
+		// left column
+		if ((this.array[0][0] == this.array[1][0]) && (this.array[1][0] == this.array[2][0]))
+			return this.array[0][0];
+
+		// middle column
+		if ((this.array[0][1] == this.array[1][1]) && (this.array[1][1] == this.array[2][1]))
+			return this.array[0][1];
+
+		// right column
+		if ((this.array[0][2] == this.array[1][2]) && (this.array[1][2] == this.array[2][2]))
+			return this.array[0][2];
+
+		// diagonal down
+		if ((this.array[0][0] == this.array[1][1]) && (this.array[1][1] == this.array[2][2]))
+			return this.array[0][0];
+
+		// diagonal up
+		if ((this.array[0][2] == this.array[1][1]) && (this.array[1][1] == this.array[2][0]))
+			return this.array[0][2];
+
+		for (int i = 0; i < this.array.length; i++) {
+			for (int j = 0; j < this.array[i].length; j++) {
+				if (this.array[i][j] == 0)
+					return -1;
+			}
+		}
+
+		// stalemate
+		return 3;
 	}
 
 	/**
