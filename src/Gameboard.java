@@ -57,7 +57,7 @@ public class Gameboard {
 	 * location with the most possible wins.***
 	 */
 	public void computerPlays() {
-		this.winNow();
+		this.winsNow();
 		this.checkWins();
 		this.block();
 		this.checkWins();
@@ -202,12 +202,12 @@ public class Gameboard {
 	 * we look for two 'O'. Consider finishing winNow() first. - MB
 	 */
 	public boolean block() {
-		
-		if(this.winsNow() == false){
+
+		if (this.winsNow() == false) {
 			/*
 			 * Starting with horizontals (or we can make very complicated if
-			 * statements, with I would vote against because it may make the code
-			 * harder to read)
+			 * statements, with I would vote against because it may make the
+			 * code harder to read)
 			 */
 			// checking for position 0
 			if (this.array[0][1] == 'X' && this.array[0][2] == 'X') {
@@ -330,9 +330,160 @@ public class Gameboard {
 	 *            the column of the location
 	 * @return the number of possible wins at that location.
 	 */
-	public static int bestWin(char[][] a, int i, int j) {
+	public void bestWin() {
 
-		return 0;
+		if (this.block() == false) {
+			int wins = -1, bestX = -1, bestY = -1;
+			/*
+			 * If you do not enter any if statements then the board is full,
+			 * therefore, stalemate. Not sure if this should be done in this
+			 * method or we should create a separate one.
+			 */
+			// checking location 0
+			if (this.array[0][0] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[0][1] != 'X' && this.array[0][2] != 'X')
+					possibleWins++;
+				if (this.array[1][1] != 'X' && this.array[2][2] != 'X')
+					possibleWins++;
+				if (this.array[1][0] != 'X' && this.array[2][0] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 0;
+					bestX = 0;
+				}
+			}
+			// checking location 1
+			if (this.array[0][1] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[0][0] != 'X' && this.array[0][2] != 'X')
+					possibleWins++;
+				if (this.array[1][1] != 'X' && this.array[2][1] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 0;
+					bestX = 1;
+				}
+			}
+			// checking location 2
+			if (this.array[0][2] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[0][0] != 'X' && this.array[0][1] != 'X')
+					possibleWins++;
+				if (this.array[1][1] != 'X' && this.array[2][0] != 'X')
+					possibleWins++;
+				if (this.array[1][2] != 'X' && this.array[2][2] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 0;
+					bestX = 2;
+				}
+			}
+			// checking location 3
+			if (this.array[1][0] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[1][1] != 'X' && this.array[1][2] != 'X')
+					possibleWins++;
+				if (this.array[0][0] != 'X' && this.array[2][0] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 1;
+					bestX = 0;
+				}
+			}
+			// checking location 4
+			if (this.array[1][1] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[1][0] != 'X' && this.array[1][2] != 'X')
+					possibleWins++;
+				if (this.array[0][1] != 'X' && this.array[2][1] != 'X')
+					possibleWins++;
+				if (this.array[0][0] != 'X' && this.array[2][2] != 'X')
+					possibleWins++;
+				if (this.array[2][0] != 'X' && this.array[1][2] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 1;
+					bestX = 1;
+				}
+			}
+			// checking location 5
+			if (this.array[1][2] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[1][0] != 'X' && this.array[1][1] != 'X')
+					possibleWins++;
+				if (this.array[0][2] != 'X' && this.array[2][2] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 1;
+					bestX = 2;
+				}
+			}
+			// checking location 6
+			if (this.array[2][0] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[2][1] != 'X' && this.array[1][2] != 'X')
+					possibleWins++;
+				if (this.array[0][0] != 'X' && this.array[1][0] != 'X')
+					possibleWins++;
+				if (this.array[0][2] != 'X' && this.array[1][1] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 2;
+					bestX = 0;
+				}
+			}
+			// checking location 7
+			if (this.array[2][1] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[2][0] != 'X' && this.array[2][2] != 'X')
+					possibleWins++;
+				if (this.array[0][1] != 'X' && this.array[1][1] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 2;
+					bestX = 1;
+				}
+			}
+			// checking location 8
+			if (this.array[2][2] == 0) {
+				int possibleWins = 0;
+				// maybe this can be a switch statement - MB
+				if (this.array[2][0] != 'X' && this.array[2][1] != 'X')
+					possibleWins++;
+				if (this.array[0][2] != 'X' && this.array[1][2] != 'X')
+					possibleWins++;
+				if (this.array[0][0] != 'X' && this.array[1][1] != 'X')
+					possibleWins++;
+				if (possibleWins > wins) {
+					wins = possibleWins;
+					bestY = 2;
+					bestX = 2;
+				}
+			}
+			/*
+			 * If we find a best location to play then we will play at that
+			 * location. If wins still equals -1, we have a stalemate.
+			 */
+			if (wins > -1)
+				this.array[bestY][bestX] = 'O';
+		}
 
 	}
 
