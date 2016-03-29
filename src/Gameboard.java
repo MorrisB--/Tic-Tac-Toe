@@ -201,8 +201,121 @@ public class Gameboard {
 	 * This is essentially the winNow method but instead of looking for two 'X',
 	 * we look for two 'O'. Consider finishing winNow() first. - MB
 	 */
-	public void block() {
-
+	public boolean block() {
+		
+		if(this.winsNow() == false){
+			/*
+			 * Starting with horizontals (or we can make very complicated if
+			 * statements, with I would vote against because it may make the code
+			 * harder to read)
+			 */
+			// checking for position 0
+			if (this.array[0][1] == 'X' && this.array[0][2] == 'X') {
+				this.array[0][0] = 'O';
+				return true;
+			} // checking for position 1
+			else if (this.array[0][0] == 'X' && this.array[0][2] == 'X') {
+				this.array[0][1] = 'O';
+				return true;
+			} // checking for position 2
+			else if (this.array[0][0] == 'X' && this.array[0][1] == 'X') {
+				this.array[0][2] = 'O';
+				return true;
+			} // checking for position 3
+			else if (this.array[1][1] == 'X' && this.array[1][2] == 'X') {
+				this.array[1][0] = 'O';
+				return true;
+			} // checking for position 4
+			else if (this.array[1][0] == 'X' && this.array[1][2] == 'X') {
+				this.array[1][1] = 'O';
+				return true;
+			} // checking for position 5
+			else if (this.array[1][0] == 'X' && this.array[1][1] == 'X') {
+				this.array[1][2] = 'O';
+				return true;
+			} // checking for position 6
+			else if (this.array[2][1] == 'X' && this.array[2][2] == 'X') {
+				this.array[2][0] = 'O';
+				return true;
+			} // checking for position 7
+			else if (this.array[2][0] == 'X' && this.array[2][2] == 'X') {
+				this.array[2][1] = 'O';
+				return true;
+			} // checking for position 8
+			else if (this.array[2][0] == 'X' && this.array[2][1] == 'X') {
+				this.array[2][2] = 'O';
+				return true;
+			}
+			/*
+			 * Checking for vertical wins
+			 */
+			// checking for position 0
+			else if (this.array[1][0] == 'X' && this.array[2][0] == 'X') {
+				this.array[0][0] = 'O';
+				return true;
+			} // checking for position 1
+			else if (this.array[1][1] == 'X' && this.array[2][1] == 'X') {
+				this.array[0][1] = 'O';
+				return true;
+			} // checking for position 2
+			else if (this.array[1][2] == 'X' && this.array[2][2] == 'X') {
+				this.array[0][2] = 'O';
+				return true;
+			} // checking for position 3
+			else if (this.array[0][0] == 'X' && this.array[2][0] == 'X') {
+				this.array[1][0] = 'O';
+				return true;
+			} // checking for position 4
+			else if (this.array[0][1] == 'X' && this.array[2][1] == 'X') {
+				this.array[1][1] = 'O';
+				return true;
+			} // checking for position 5
+			else if (this.array[0][2] == 'X' && this.array[2][2] == 'X') {
+				this.array[1][2] = 'O';
+				return true;
+			} // checking for position 6
+			else if (this.array[0][0] == 'X' && this.array[1][0] == 'X') {
+				this.array[2][0] = 'O';
+				return true;
+			} // checking for position 7
+			else if (this.array[0][1] == 'X' && this.array[1][1] == 'X') {
+				this.array[2][1] = 'O';
+				return true;
+			} // checking for position 8
+			else if (this.array[0][2] == 'X' && this.array[1][2] == 'X') {
+				this.array[2][2] = 'O';
+				return true;
+			}
+			/*
+			 * Checking for diagonals
+			 */
+			// checking for position 0
+			else if (this.array[1][1] == 'X' && this.array[2][2] == 'X') {
+				this.array[0][0] = 'O';
+				return true;
+			} // checking for position 2
+			else if (this.array[1][1] == 'X' && this.array[2][0] == 'X') {
+				this.array[0][2] = 'O';
+				return true;
+			} // checking for position 4 right
+			else if (this.array[0][0] == 'X' && this.array[2][2] == 'X') {
+				this.array[1][1] = 'O';
+				return true;
+			} // checking for position 4 left
+			else if (this.array[0][2] == 'X' && this.array[2][0] == 'X') {
+				this.array[1][1] = 'O';
+				return true;
+			} // checking for position 6
+			else if (this.array[1][1] == 'X' && this.array[0][2] == 'X') {
+				this.array[2][0] = 'O';
+				return true;
+			} // checking for position 8
+			else if (this.array[0][0] == 'X' && this.array[1][1] == 'X') {
+				this.array[2][2] = 'O';
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
