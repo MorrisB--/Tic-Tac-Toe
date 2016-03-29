@@ -2,9 +2,11 @@ TODO
 
 * Add proper description for this repo
 
+/* TicTacToe */
+
+* Make loop implement checkWin() and checkLose()
 
 /* Gameboard */
 
-
 * Add printGameBoard() method
-* Add checkWins() method
+* Add checkWin() and checkLose() method
