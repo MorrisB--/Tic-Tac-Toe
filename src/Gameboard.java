@@ -44,7 +44,6 @@ public class Gameboard {
 			else
 				System.out.println("You cannot play there!");
 		}
-		this.checkWins();
 		// print the board afterwards, something like printGameBoard() - MB
 	}
 
@@ -521,6 +520,22 @@ public class Gameboard {
 
 		// stalemate
 		return 3;
+	}
+
+	/**
+	 * Prints the current state of the Gameboard
+	 */
+	public void printGameboard() {
+
+		System.out.println("Current Gameboard:");
+
+		for (int i = 0; i < this.array.length; i++) {
+			for (int j = 0; j < this.array[i].length; j++) {
+				System.out.print(this.array[i][j] + " | ");
+			}
+			System.out.println("-------------");
+		}
+
 	}
 
 	/**
