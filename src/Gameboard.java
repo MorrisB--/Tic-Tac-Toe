@@ -57,7 +57,14 @@ public class Gameboard {
 	 * location with the most possible wins.***
 	 */
 	public void computerPlays() {
-
+		this.winNow();
+		this.checkWins();
+		this.block();
+		this.checkWins();
+		this.bestWin();
+		this.checkWins();
+		
+/* Old stuff may be needed later
 		int bestX, bestY, chances = 0;
 
 		for (int i = 0; i < 2; i++) {
@@ -72,7 +79,7 @@ public class Gameboard {
 				}
 			}
 		}
-
+*/
 		this.checkWins();
 	}
 
@@ -81,7 +88,6 @@ public class Gameboard {
 	 * that will allow the computer to win in its current move. If not then this
 	 * method will do nothing.
 	 * 
-	 * @return
 	 */
 	public void winNow() {
 		/*
