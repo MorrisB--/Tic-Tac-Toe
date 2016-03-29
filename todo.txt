@@ -8,4 +8,5 @@ TODO
 
 * Add printGameBoard() method
 * Finish winsNow() method
+* Finish block() method
 * Finish bestWins() method
