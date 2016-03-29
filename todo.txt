@@ -6,9 +6,3 @@ TODO
 /* TicTacToe */
 
 * Make loop implement checkWinner() properly
-
-
-/* Gameboard */
-
-* Add printGameBoard() method
-* Fix computerPlays to implement new methods properly
