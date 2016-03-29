@@ -43,6 +43,10 @@ public class TicTacToe extends Gameboard {
 				// keyboard.close();
 			}
 			int winnerIs = gameboard.checkWinner();
+			/*
+			* I added these case statements because I wanted to know exactly what
+			* was being returned. This can be shortened when we're finished. - MB
+			*/
 			switch (winnerIs) {
 			case 1:
 				System.out.println("You win!");
