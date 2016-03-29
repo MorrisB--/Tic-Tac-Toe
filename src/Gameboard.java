@@ -57,12 +57,7 @@ public class Gameboard {
 	 * location with the most possible wins.***
 	 */
 	public void computerPlays() {
-		this.winsNow();
-		this.checkWins();
-		this.block();
-		this.checkWins();
 		this.bestWin();
-		this.checkWins();
 
 		/*
 		 * Old stuff may be needed later int bestX, bestY, chances = 0;
@@ -72,7 +67,6 @@ public class Gameboard {
 		 * if (bestWin(this.array, i, j) > chances) { chances =
 		 * bestWin(this.array, i, j); bestX = j; bestY = i; } } } }
 		 */
-		this.checkWins();
 	}
 
 	/**
