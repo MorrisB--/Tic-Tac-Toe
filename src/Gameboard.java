@@ -39,8 +39,8 @@ public class Gameboard {
 			else
 				System.out.println("You cannot play there!");
 		} else if (l == 6 || l == 7 || l == 8) {
-			if (this.array[1][l] == 0)
-				this.array[1][l] = 'X';
+			if (this.array[2][l] == 0)
+				this.array[2][l] = 'X';
 			else
 				System.out.println("You cannot play there!");
 		}
