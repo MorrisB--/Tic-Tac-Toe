@@ -37,7 +37,7 @@ public class TicTacToe extends Gameboard {
 				gameboard.userPlays(location);
 				gameboard.computerPlays();
 				gameboard.printGameboard();
-				System.out.println(gameboard.checkWinner());
+				//System.out.println(gameboard.checkWinner());
 
 				// Commented this out just in case it breaks something - MB
 				// keyboard.close();
