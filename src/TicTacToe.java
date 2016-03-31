@@ -41,15 +41,29 @@ public class TicTacToe extends Gameboard {
 
 				// Commented this out just in case it breaks something - MB
 				// keyboard.close();
+<<<<<<< HEAD
 			}
          winningPlayer();  
 			//char winnerIs = gameboard.checkWinner();
+=======
+			
+			
+			
+	}
+			
+		gameboard.winningPlayer();}
+			//int winnerIs = gameboard.checkWinner();
+>>>>>>> 11b542419e6bff32eb7d85373c025f3b04038038
 			/*
 			* I added these case statements because I wanted to know exactly what
 			* was being returned. This can be shortened when we're finished. - MB
 			*/
+<<<<<<< HEAD
          /*
 			switch (winnerIs) {
+=======
+		/*	switch (winnerIs) {
+>>>>>>> 11b542419e6bff32eb7d85373c025f3b04038038
 			case 1:
 				System.out.println("You win!");
 				break;
@@ -72,7 +86,7 @@ public class TicTacToe extends Gameboard {
 			}*/
 			// if win == true print you win - MB
 			// if lose == true print you lose - MB
-		}
+		}*/
 
 		/*
 		 * Instead of declaring each type of exception we want to catch I
