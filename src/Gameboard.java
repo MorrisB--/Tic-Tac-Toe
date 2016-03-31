@@ -8,10 +8,11 @@
  * @since 03-27-2016
  * 
  */
-
+//Test change 
 public class Gameboard {
 
-	char[][] array = new char[3][3];
+	char[][] array = new char [3][3];
+   public static char winner; 
 
 	// this may not be needed when we're done - MB
 	public Gameboard() {
@@ -42,7 +43,7 @@ public class Gameboard {
 			if (this.array[2][l-6] == 0)
 				this.array[2][l-6] = 'X';
 			else
-				System.out.println("You cannot play there!");
+				System.out.println("You cannot play there!That is not a valid positon");
 		}
 		// print the board afterwards, something like printGameBoard() - MB
 	}
@@ -477,56 +478,90 @@ public class Gameboard {
 	/**
 	 * Check to see if the user or computer won after their current move.
 	 */
-	public int checkWinner() {
+    
+   public static void winningPlayer(){
+      
+      if(winner == 'S')
+         System.out.println("This is a stalemate!");
+      else if (winner == 'X') 
+         System.out.println("Congrats, you win!"); 
+      else 
+         System.out.println("Sorry, you lose!");  
+   }
+	public boolean checkWinner() {
 
 		// top row
-		if ((this.array[0][0] == this.array[0][1]) && (this.array[0][1] == this.array[0][2]))
-			return this.array[0][0];
+		if ((this.array[0][0] == this.array[0][1]) && (this.array[0][1] == this.array[0][2])){
+         if ( this.array[0][0] == 0)
+            return false; 
+			winner =( this.array[0][0]);
+         return true;}
 
 		// middle row
-		if ((this.array[1][0] == this.array[1][1]) && (this.array[1][1] == this.array[1][2]))
-			return this.array[1][0];
+		if ((this.array[1][0] == this.array[1][1]) && (this.array[1][1] == this.array[1][2])){
+         if ( this.array[1][0] == 0)
+            return false; 
+			winner = ( this.array[1][0]);
+         return true; }
 
 		// bottom row
-		if ((this.array[2][0] == this.array[2][1]) && (this.array[2][1] == this.array[2][2]))
-			return this.array[2][0];
-
+		if ((this.array[2][0] == this.array[2][1]) && (this.array[2][1] == this.array[2][2])){
+         if ( this.array[2][0] == 0)
+            return false;  
+			winner = ( this.array[2][0]);
+         return true;}
 		// left column
-		if ((this.array[0][0] == this.array[1][0]) && (this.array[1][0] == this.array[2][0]))
-			return this.array[0][0];
-
+		if ((this.array[0][0] == this.array[1][0]) && (this.array[1][0] == this.array[2][0])){
+         if ( this.array[0][0] == 0)
+            return false;  
+			winner = ( this.array[0][0]);
+         return true;}
 		// middle column
-		if ((this.array[0][1] == this.array[1][1]) && (this.array[1][1] == this.array[2][1]))
-			return this.array[0][1];
-
+		if ((this.array[0][1] == this.array[1][1]) && (this.array[1][1] == this.array[2][1])){
+         if ( this.array[0][1] == 0)
+            return false; 
+			winner = ( this.array[0][1]);
+         return true; }
 		// right column
-		if ((this.array[0][2] == this.array[1][2]) && (this.array[1][2] == this.array[2][2]))
-			return this.array[0][2];
+		if ((this.array[0][2] == this.array[1][2]) && (this.array[1][2] == this.array[2][2])){
+			if ( this.array[0][2] == 0)
+            return false; 
+         winner = ( this.array[0][2]);
+         return true; 
+         }
 
 		// diagonal down
 		if ((this.array[0][0] == this.array[1][1]) && (this.array[1][1] == this.array[2][2])){
 			//return this.array[0][0];
 			
 			if(this.array[0][0] == 0)
-				return -1;
-			if(this.array[0][0] == 'X')
+				return false;
+         winner =(array[0][0]); 
+         return true; 
+			/*if(this.array[0][0] == 'X')
 				return 1;
 			if(this.array[0][0] == 'O')
-				return 2;
+				return 2;*/
 		}
 		// diagonal up
-		if ((this.array[0][2] == this.array[1][1]) && (this.array[1][1] == this.array[2][0]))
-			return this.array[0][2];
+		if ((this.array[0][2] == this.array[1][1]) && (this.array[1][1] == this.array[2][0])){
+         if ( this.array[0][2] == 0)
+            return false; 
+			winner =( this.array[0][2]);
+         return true; 
+         }
 
 		for (int i = 0; i < this.array.length; i++) {
 			for (int j = 0; j < this.array[i].length; j++) {
 				if (this.array[i][j] == 0)
-					return -1;
+					return false;
 			}
 		}
 
 		// stalemate
-		return 3;
+      winner = ('S');
+      return true; 
+      
 	}
 
 	/**
@@ -540,6 +575,7 @@ public class Gameboard {
 			for (int j = 0; j < this.array[i].length; j++) {
 				System.out.print(this.array[i][j] + " | ");
 			}
+         System.out.println(); 
 			System.out.println("-------------");
 		}
 
