@@ -319,7 +319,7 @@ public class Gameboard {
 	 */
 	public void bestWin() {
 
-		if (this.block() == false) {
+		if (this.winsNow() == false && this.block() == false) {
 			int wins = -1, bestX = -1, bestY = -1;
 			/*
 			 * If you do not enter any if statements then the board is full,
@@ -479,7 +479,7 @@ public class Gameboard {
 	 * Check to see if the user or computer won after their current move.
 	 */
     
-   public static void winningPlayer(){
+   public void winningPlayer(){
       
       if(winner == 'S')
          System.out.println("This is a stalemate!");
