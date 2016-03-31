@@ -25,7 +25,7 @@ public class TicTacToe extends Gameboard {
 			// Can make this much nicer just trying to get it to work first - MB
 
 			// keep messing around with this if your having issues - MB
-			while (gameboard.checkWinner() <= 0) {
+			while (gameboard.checkWinner() == false) {
 				/*
 				 * This code is asking the user to choose a location on the
 				 * board
@@ -41,13 +41,18 @@ public class TicTacToe extends Gameboard {
 
 				// Commented this out just in case it breaks something - MB
 				// keyboard.close();
-			}
-			int winnerIs = gameboard.checkWinner();
+			
+			
+			
+	}
+			
+		gameboard.winningPlayer();}
+			//int winnerIs = gameboard.checkWinner();
 			/*
 			* I added these case statements because I wanted to know exactly what
 			* was being returned. This can be shortened when we're finished. - MB
 			*/
-			switch (winnerIs) {
+		/*	switch (winnerIs) {
 			case 1:
 				System.out.println("You win!");
 				break;
@@ -69,7 +74,7 @@ public class TicTacToe extends Gameboard {
 			}
 			// if win == true print you win - MB
 			// if lose == true print you lose - MB
-		}
+		}*/
 
 		/*
 		 * Instead of declaring each type of exception we want to catch I
