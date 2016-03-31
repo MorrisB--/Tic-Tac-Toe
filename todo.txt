@@ -5,3 +5,7 @@ To Do:
 
 BUGS FOUND
 
+* If user tries to block the computer will overwrite their move and  force a win.
+  Test Case:
+  Userplays 8, then 2, then 3
+
