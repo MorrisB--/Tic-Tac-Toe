@@ -1,6 +1,6 @@
 To Do (Alpha):
 
-* Prompt user to enter another location if their current location is full
+* Prompt user to enter another location if their chosen location is full
 
 BUGS FOUND
 
@@ -12,9 +12,9 @@ BUGS FOUND
   Test Case:
   Userplays 8, then 2, then 3
 
-*There are particular cases where the computer does not play and/or the computer plays on the winning move.
-When I debugged it yesterday, it seems like there is an issue with the bestWins() method. It looks like the 
-criteria for it to make a selection is not being met so it does not play any move. 
+* There are particular cases where the computer does not play and/or the computer plays on the winning move.
+  When I debugged it yesterday, it seems like there is an issue with the bestWins() method. It looks like the 
+  criteria for it to make a selection is not being met so it does not play any move. 
 
   Test Case: 
   Userplays 0, then 8 (after this move is where I noticed the computer did not play)
