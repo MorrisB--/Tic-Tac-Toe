@@ -215,7 +215,18 @@ public class Gameboard {
 			else if (this.array[0][0] == 'X' && this.array[0][1] == 'X') {
 				this.array[0][2] = 'O';
 				return true;
-			} // checking for position 3
+			} 
+         
+         
+         
+          else if (this.array[0][2] == 'X' && this.array[1][1] == 'X') {
+				this.array[0][2] = 'O';
+				return true;
+			}
+         
+         
+         
+         // checking for position 3
 			else if (this.array[1][1] == 'X' && this.array[1][2] == 'X') {
 				this.array[1][0] = 'O';
 				return true;
@@ -223,7 +234,8 @@ public class Gameboard {
 			else if (this.array[1][0] == 'X' && this.array[1][2] == 'X') {
 				this.array[1][1] = 'O';
 				return true;
-			} // checking for position 5
+			}
+          // checking for position 5
 			else if (this.array[1][0] == 'X' && this.array[1][1] == 'X') {
 				this.array[1][2] = 'O';
 				return true;
