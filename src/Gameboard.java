@@ -11,7 +11,9 @@
 //Test change 
 public class Gameboard {
 
-	char[][] array = new char [3][3];
+	 char[][] array = new char [3][3];
+    
+    
    public static char winner; 
 
 	// this may not be needed when we're done - MB
@@ -67,7 +69,9 @@ public class Gameboard {
 	 * location with the most possible wins.***
 	 */
 	public void computerPlays() {
-		this.bestWin();
+      if(winsNow() ==false)
+         if(block() == false) 
+            this.bestWin();
 
 		/*
 		 * Old stuff may be needed later int bestX, bestY, chances = 0;
@@ -92,39 +96,39 @@ public class Gameboard {
 		 * harder to read)
 		 */
 		// checking for position 0
-		if (this.array[0][1] == 'O' && this.array[0][2] == 'O') {
+		if (this.array[0][1] == 'O' && this.array[0][2] == 'O' && array[0][0] == 0) {
 			this.array[0][0] = 'O';
 			return true;
 		} // checking for position 1
-		else if (this.array[0][0] == 'O' && this.array[0][2] == 'O') {
+		else if (this.array[0][0] == 'O' && this.array[0][2] == 'O' && array[0][1] ==0) {
 			this.array[0][1] = 'O';
 			return true;
 		} // checking for position 2
-		else if (this.array[0][0] == 'O' && this.array[0][1] == 'O') {
+		else if (this.array[0][0] == 'O' && this.array[0][1] == 'O' && array[0][2] ==0) {
 			this.array[0][2] = 'O';
 			return true;
 		} // checking for position 3
-		else if (this.array[1][1] == 'O' && this.array[1][2] == 'O') {
+		else if (this.array[1][1] == 'O' && this.array[1][2] == 'O' && array[1][0] ==0) {
 			this.array[1][0] = 'O';
 			return true;
 		} // checking for position 4
-		else if (this.array[1][0] == 'O' && this.array[1][2] == 'O') {
+		else if (this.array[1][0] == 'O' && this.array[1][2] == 'O' && array[1][1] ==0) {
 			this.array[1][1] = 'O';
 			return true;
 		} // checking for position 5
-		else if (this.array[1][0] == 'O' && this.array[1][1] == 'O') {
+		else if (this.array[1][0] == 'O' && this.array[1][1] == 'O' && array[1][0] ==0) {
 			this.array[1][2] = 'O';
 			return true;
 		} // checking for position 6
-		else if (this.array[2][1] == 'O' && this.array[2][2] == 'O') {
+		else if (this.array[2][1] == 'O' && this.array[2][2] == 'O' && array[2][0] ==0) {
 			this.array[2][0] = 'O';
 			return true;
 		} // checking for position 7
-		else if (this.array[2][0] == 'O' && this.array[2][2] == 'O') {
+		else if (this.array[2][0] == 'O' && this.array[2][2] == 'O' && array[2][1] ==0) {
 			this.array[2][1] = 'O';
 			return true;
 		} // checking for position 8
-		else if (this.array[2][0] == 'O' && this.array[2][1] == 'O') {
+		else if (this.array[2][0] == 'O' && this.array[2][1] == 'O'&& array[2][2] ==0) {
 			this.array[2][2] = 'O';
 			return true;
 		}
@@ -132,39 +136,39 @@ public class Gameboard {
 		 * Checking for vertical wins
 		 */
 		// checking for position 0
-		else if (this.array[1][0] == 'O' && this.array[2][0] == 'O') {
+		else if (this.array[1][0] == 'O' && this.array[2][0] == 'O'&& array[0][0] ==0) {
 			this.array[0][0] = 'O';
 			return true;
 		} // checking for position 1
-		else if (this.array[1][1] == 'O' && this.array[2][1] == 'O') {
+		else if (this.array[1][1] == 'O' && this.array[2][1] == 'O'&& array[0][1] ==0) {
 			this.array[0][1] = 'O';
 			return true;
 		} // checking for position 2
-		else if (this.array[1][2] == 'O' && this.array[2][2] == 'O') {
+		else if (this.array[1][2] == 'O' && this.array[2][2] == 'O' && array[0][2] ==0) {
 			this.array[0][2] = 'O';
 			return true;
 		} // checking for position 3
-		else if (this.array[0][0] == 'O' && this.array[2][0] == 'O') {
+		else if (this.array[0][0] == 'O' && this.array[2][0] == 'O' && array[1][0] ==0) {
 			this.array[1][0] = 'O';
 			return true;
 		} // checking for position 4
-		else if (this.array[0][1] == 'O' && this.array[2][1] == 'O') {
+		else if (this.array[0][1] == 'O' && this.array[2][1] == 'O' && array[1][1] ==0) {
 			this.array[1][1] = 'O';
 			return true;
 		} // checking for position 5
-		else if (this.array[0][2] == 'O' && this.array[2][2] == 'O') {
+		else if (this.array[0][2] == 'O' && this.array[2][2] == 'O' && array[1][2] ==0) {
 			this.array[1][2] = 'O';
 			return true;
 		} // checking for position 6
-		else if (this.array[0][0] == 'O' && this.array[1][0] == 'O') {
+		else if (this.array[0][0] == 'O' && this.array[1][0] == 'O' && array[2][0] ==0) {
 			this.array[2][0] = 'O';
 			return true;
 		} // checking for position 7
-		else if (this.array[0][1] == 'O' && this.array[1][1] == 'O') {
+		else if (this.array[0][1] == 'O' && this.array[1][1] == 'O' && array[2][1] ==0) {
 			this.array[2][1] = 'O';
 			return true;
 		} // checking for position 8
-		else if (this.array[0][2] == 'O' && this.array[1][2] == 'O') {
+		else if (this.array[0][2] == 'O' && this.array[1][2] == 'O' && array[2][2] ==0) {
 			this.array[2][2] = 'O';
 			return true;
 		}
@@ -172,27 +176,27 @@ public class Gameboard {
 		 * Checking for diagonals
 		 */
 		// checking for position 0
-		else if (this.array[1][1] == 'O' && this.array[2][2] == 'O') {
+		else if (this.array[1][1] == 'O' && this.array[2][2] == 'O' && array[0][0] ==0) {
 			this.array[0][0] = 'O';
 			return true;
 		} // checking for position 2
-		else if (this.array[1][1] == 'O' && this.array[2][0] == 'O') {
+		else if (this.array[1][1] == 'O' && this.array[2][0] == 'O' && array[0][2] ==0) {
 			this.array[0][2] = 'O';
 			return true;
 		} // checking for position 4 right
-		else if (this.array[0][0] == 'O' && this.array[2][2] == 'O') {
+		else if (this.array[0][0] == 'O' && this.array[2][2] == 'O' && array[1][1] ==0) {
 			this.array[1][1] = 'O';
 			return true;
 		} // checking for position 4 left
-		else if (this.array[0][2] == 'O' && this.array[2][0] == 'O') {
+		else if (this.array[0][2] == 'O' && this.array[2][0] == 'O' && array[1][1] ==0) {
 			this.array[1][1] = 'O';
 			return true;
 		} // checking for position 6
-		else if (this.array[1][1] == 'O' && this.array[0][2] == 'O') {
+		else if (this.array[1][1] == 'O' && this.array[0][2] == 'O' && array[2][0] ==0) {
 			this.array[2][0] = 'O';
 			return true;
 		} // checking for position 8
-		else if (this.array[0][0] == 'O' && this.array[1][1] == 'O') {
+		else if (this.array[0][0] == 'O' && this.array[1][1] == 'O' && array[2][2] ==0) {
 			this.array[2][2] = 'O';
 			return true;
 		}
@@ -207,58 +211,58 @@ public class Gameboard {
 	 */
 	public boolean block() {
 
-		if (this.winsNow() == false) {
+		//if (this.winsNow() == false) {
 			/*
 			 * Starting with horizontals (or we can make very complicated if
 			 * statements, with I would vote against because it may make the
 			 * code harder to read)
 			 */
 			// checking for position 0
-			if (this.array[0][1] == 'X' && this.array[0][2] == 'X') {
+			if (this.array[0][1] == 'X' && this.array[0][2] == 'X' && array[0][0] != 'O') {
 				this.array[0][0] = 'O';
 				return true;
 			} // checking for position 1
-			else if (this.array[0][0] == 'X' && this.array[0][2] == 'X') {
+			else if (this.array[0][0] == 'X' && this.array[0][2] == 'X' && array[0][1] != 'O') {
 				this.array[0][1] = 'O';
 				return true;
 			} // checking for position 2
-			else if (this.array[0][0] == 'X' && this.array[0][1] == 'X') {
+			else if (this.array[0][0] == 'X' && this.array[0][1] == 'X' && array[0][2] != 'O') {
 				this.array[0][2] = 'O';
 				return true;
 			} 
          
          
-         
+         /*
           else if (this.array[0][2] == 'X' && this.array[1][1] == 'X') {
 				this.array[0][2] = 'O';
 				return true;
-			}
+			}*/
          
          
          
          // checking for position 3
-			else if (this.array[1][1] == 'X' && this.array[1][2] == 'X') {
+			else if (this.array[1][1] == 'X' && this.array[1][2] == 'X' && array[1][0] != 'O') {
 				this.array[1][0] = 'O';
 				return true;
 			} // checking for position 4
-			else if (this.array[1][0] == 'X' && this.array[1][2] == 'X') {
+			else if (this.array[1][0] == 'X' && this.array[1][2] == 'X' && array[1][1] != 'O') {
 				this.array[1][1] = 'O';
 				return true;
 			}
           // checking for position 5
-			else if (this.array[1][0] == 'X' && this.array[1][1] == 'X') {
+			else if (this.array[1][0] == 'X' && this.array[1][1] == 'X' && array[1][2] != 'O') {
 				this.array[1][2] = 'O';
 				return true;
 			} // checking for position 6
-			else if (this.array[2][1] == 'X' && this.array[2][2] == 'X') {
+			else if (this.array[2][1] == 'X' && this.array[2][2] == 'X' && array[2][0] != 'O') {
 				this.array[2][0] = 'O';
 				return true;
 			} // checking for position 7
-			else if (this.array[2][0] == 'X' && this.array[2][2] == 'X') {
+			else if (this.array[2][0] == 'X' && this.array[2][2] == 'X' && array[2][1] != 'O') {
 				this.array[2][1] = 'O';
 				return true;
 			} // checking for position 8
-			else if (this.array[2][0] == 'X' && this.array[2][1] == 'X') {
+			else if (this.array[2][0] == 'X' && this.array[2][1] == 'X' && array[2][2] != 'O') {
 				this.array[2][2] = 'O';
 				return true;
 			}
@@ -266,39 +270,39 @@ public class Gameboard {
 			 * Checking for vertical wins
 			 */
 			// checking for position 0
-			else if (this.array[1][0] == 'X' && this.array[2][0] == 'X') {
+			else if (this.array[1][0] == 'X' && this.array[2][0] == 'X' && array[0][0] != 'O') {
 				this.array[0][0] = 'O';
 				return true;
 			} // checking for position 1
-			else if (this.array[1][1] == 'X' && this.array[2][1] == 'X') {
+			else if (this.array[1][1] == 'X' && this.array[2][1] == 'X' && array[0][1] != 'O') {
 				this.array[0][1] = 'O';
 				return true;
 			} // checking for position 2
-			else if (this.array[1][2] == 'X' && this.array[2][2] == 'X') {
+			else if (this.array[1][2] == 'X' && this.array[2][2] == 'X' && array[0][2] != 'O') {
 				this.array[0][2] = 'O';
 				return true;
 			} // checking for position 3
-			else if (this.array[0][0] == 'X' && this.array[2][0] == 'X') {
+			else if (this.array[0][0] == 'X' && this.array[2][0] == 'X' && array[1][0] != 'O') {
 				this.array[1][0] = 'O';
 				return true;
 			} // checking for position 4
-			else if (this.array[0][1] == 'X' && this.array[2][1] == 'X') {
+			else if (this.array[0][1] == 'X' && this.array[2][1] == 'X' && array[1][1] != 'O') {
 				this.array[1][1] = 'O';
 				return true;
 			} // checking for position 5
-			else if (this.array[0][2] == 'X' && this.array[2][2] == 'X') {
+			else if (this.array[0][2] == 'X' && this.array[2][2] == 'X' && array[1][2] != 'O') {
 				this.array[1][2] = 'O';
 				return true;
 			} // checking for position 6
-			else if (this.array[0][0] == 'X' && this.array[1][0] == 'X') {
+			else if (this.array[0][0] == 'X' && this.array[1][0] == 'X' && array[2][0] != 'O') {
 				this.array[2][0] = 'O';
 				return true;
 			} // checking for position 7
-			else if (this.array[0][1] == 'X' && this.array[1][1] == 'X') {
+			else if (this.array[0][1] == 'X' && this.array[1][1] == 'X' && array[2][1] != 'O') {
 				this.array[2][1] = 'O';
 				return true;
 			} // checking for position 8
-			else if (this.array[0][2] == 'X' && this.array[1][2] == 'X') {
+			else if (this.array[0][2] == 'X' && this.array[1][2] == 'X' && array[0][2] != 'O') {
 				this.array[2][2] = 'O';
 				return true;
 			}
@@ -306,31 +310,31 @@ public class Gameboard {
 			 * Checking for diagonals
 			 */
 			// checking for position 0
-			else if (this.array[1][1] == 'X' && this.array[2][2] == 'X') {
+			else if (this.array[1][1] == 'X' && this.array[2][2] == 'X' && array[0][0] != 'O') {
 				this.array[0][0] = 'O';
 				return true;
 			} // checking for position 2
-			else if (this.array[1][1] == 'X' && this.array[2][0] == 'X') {
+			else if (this.array[1][1] == 'X' && this.array[2][0] == 'X' && array[0][2] != 'O') {
 				this.array[0][2] = 'O';
 				return true;
 			} // checking for position 4 right
-			else if (this.array[0][0] == 'X' && this.array[2][2] == 'X') {
+			else if (this.array[0][0] == 'X' && this.array[2][2] == 'X' && array[1][1] != 'O') {
 				this.array[1][1] = 'O';
 				return true;
 			} // checking for position 4 left
-			else if (this.array[0][2] == 'X' && this.array[2][0] == 'X') {
+			else if (this.array[0][2] == 'X' && this.array[2][0] == 'X' && array[1][1] != 'O') {
 				this.array[1][1] = 'O';
 				return true;
 			} // checking for position 6
-			else if (this.array[1][1] == 'X' && this.array[0][2] == 'X') {
+			else if (this.array[1][1] == 'X' && this.array[0][2] == 'X' && array[2][0] != 'O') {
 				this.array[2][0] = 'O';
 				return true;
 			} // checking for position 8
-			else if (this.array[0][0] == 'X' && this.array[1][1] == 'X') {
+			else if (this.array[0][0] == 'X' && this.array[1][1] == 'X' && array[2][2] != 'O') {
 				this.array[2][2] = 'O';
 				return true;
 			}
-		}
+		//}
 		return false;
 	}
 
@@ -341,7 +345,7 @@ public class Gameboard {
 	 */
 	public void bestWin() {
 
-		if (this.winsNow() == false && this.block() == false) {
+		//if (this.winsNow() == false && this.block() == false) {
 			int wins = -1, bestX = -1, bestY = -1;
 			/*
 			 * If you do not enter any if statements then the board is full,
@@ -492,7 +496,7 @@ public class Gameboard {
 			 */
 			if (wins > -1)
 				this.array[bestY][bestX] = 'O';
-		}
+		//}
 
 	}
 
@@ -592,7 +596,8 @@ public class Gameboard {
 	public void printGameboard() {
 
 		System.out.println("Current Gameboard:");
-
+      
+      
 		for (int i = 0; i < this.array.length; i++) {
 			for (int j = 0; j < this.array[i].length; j++) {
 				System.out.print(this.array[i][j] + " | ");

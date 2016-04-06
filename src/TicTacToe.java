@@ -16,15 +16,13 @@ import java.util.*;
 public class TicTacToe extends Gameboard {
 	public static void main(String[] args) {
 
+   
 		try {
 			Gameboard gameboard = new Gameboard();
-			// This may not make sense once the Gameboard class is complete - MB
-			// boolean win = false, lose = false;
+		
 			Scanner keyboard = new Scanner(System.in);
 			int location;
-			// Can make this much nicer just trying to get it to work first - MB
-
-			// keep messing around with this if your having issues - MB
+			
 			while (gameboard.checkWinner() == false) {
 				/*
 				 * This code is asking the user to choose a location on the
@@ -34,10 +32,13 @@ public class TicTacToe extends Gameboard {
 				gameboard.printGameboard();
 				System.out.println("Choose a location to play: ");
 				location = keyboard.nextInt();
+            //System.out.println("YOUR MOVE"); 
+            //gameboard.printGameboard();
 				boolean validMove = gameboard.userPlays(location);
-            if (validMove)
+            if (validMove && gameboard.checkWinner() == false)
 				   gameboard.computerPlays();
-				//gameboard.printGameboard();
+            //System.out.println("COMPUTER'S MOVE"); 
+			   gameboard.printGameboard();
 				//System.out.println(gameboard.checkWinner());
 
 
