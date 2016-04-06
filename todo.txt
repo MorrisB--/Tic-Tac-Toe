@@ -3,22 +3,7 @@ To Do (Alpha):
 * Prompt user to enter another location if their chosen location is full
 
 BUGS FOUND
-
-* If user tries to block the computer will overwrite their move and  force a win.
-  I believe this is happening because winNow() does not check to see if the cell
-  it's playing is empty. For example if [0][1] and [0][2] are equal to 'O'. It
-  will play 'O' in [0][0], whether the user blocked or not.
-  
-  Test Case:
-  Userplays 8, then 2, then 3
-
-* There are particular cases where the computer does not play and/or the computer plays on the winning move.
-  When I debugged it yesterday, it seems like there is an issue with the bestWins() method. It looks like the 
-  criteria for it to make a selection is not being met so it does not play any move. 
-
-  Test Case: 
-  Userplays 0, then 8 (after this move is where I noticed the computer did not play)
-  Userplays 6 then 3 (after the winning move, the computer also played) 
+ 
   
 To Do (Beta):
 // Start once Alpha is completed
