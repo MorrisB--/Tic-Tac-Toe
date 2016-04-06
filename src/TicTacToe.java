@@ -34,9 +34,10 @@ public class TicTacToe extends Gameboard {
 				gameboard.printGameboard();
 				System.out.println("Choose a location to play: ");
 				location = keyboard.nextInt();
-				gameboard.userPlays(location);
-				gameboard.computerPlays();
-				gameboard.printGameboard();
+				boolean validMove = gameboard.userPlays(location);
+            if (validMove)
+				   gameboard.computerPlays();
+				//gameboard.printGameboard();
 				//System.out.println(gameboard.checkWinner());
 
 

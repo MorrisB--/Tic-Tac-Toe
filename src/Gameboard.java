@@ -26,26 +26,36 @@ public class Gameboard {
 	 * @param l
 	 *            The location that the user chose to play
 	 */
-	public void userPlays(int l) {
+	public boolean userPlays(int l) {
+   
+      boolean isValidMove = true; 
 
 		if (l == 0 || l == 1 || l == 2) {
 			if (this.array[0][l] == 0)
 				this.array[0][l] = 'X';
-			else
+			else{
 				System.out.println("You cannot play there!");
+            isValidMove = false; 
+            }
 			// next the user needs to be prompted to choose another spot - MB
 		} else if (l == 3 || l == 4 || l == 5) {
 			if (this.array[1][l-3] == 0)
 				this.array[1][l-3] = 'X';
-			else
+			else{
 				System.out.println("You cannot play there!");
+            isValidMove = false; 
+            }
 		} else if (l == 6 || l == 7 || l == 8) {
 			if (this.array[2][l-6] == 0)
 				this.array[2][l-6] = 'X';
 			else
-				System.out.println("You cannot play there!That is not a valid positon");
+				{
+				System.out.println("You cannot play there!");
+            isValidMove = false; 
+            }
 		}
 		// print the board afterwards, something like printGameBoard() - MB
+      return isValidMove; 
 	}
 
 	/**
