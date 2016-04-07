@@ -1,102 +1,45 @@
-
 /** 
- * /// ADD PROPER DESCRIPTION OF CLASS HERE \\\
- * 
- * @author Morris Ballenger
- * @author // ADD NAME HERE \\
- * @author // ADD NAME HERE \\
- * @version 1.5
- * @since 03-27-2016
- * 
+ * /// Tic Tac Toe Game \\\
  */
-
 import java.util.*;
 
-// There will be an excessive amount of comments so when they start editing the code they can understand what is going on
 public class TicTacToe extends Gameboard {
-	public static void main(String[] args) {
+	
+   public static void main(String[] args) {
 
    
 		try {
 			Gameboard gameboard = new Gameboard();
 		
 			Scanner keyboard = new Scanner(System.in);
-			int location;
 			
+         //create a variable for the user's location below
+         int location;
+		   gameboard.printGameboard();
+			//We are going to keep going through this loop as long as we do not have a winner
 			while (gameboard.checkWinner() == false) {
-				/*
-				 * This code is asking the user to choose a location on the
-				 * board
-				 */
+			
 				printModelBoard();
-				gameboard.printGameboard();
 				System.out.println("Choose a location to play: ");
 				location = keyboard.nextInt();
-            //System.out.println("YOUR MOVE"); 
-            //gameboard.printGameboard();
+            System.out.println("YOUR MOVE..."); 
 				boolean validMove = gameboard.userPlays(location);
+            System.out.println(); 
             if (validMove && gameboard.checkWinner() == false)
-				   gameboard.computerPlays();
-            //System.out.println("COMPUTER'S MOVE"); 
-			   gameboard.printGameboard();
-				//System.out.println(gameboard.checkWinner());
+            {
+			      System.out.println("COMPUTER'S MOVE...");
+               gameboard.computerPlays();
+               System.out.println();   
+            }		
 
+			}//end of while loop
+         //this statement will print out the winner or if the game is a stalemate			
+		   gameboard.winningPlayer();
+      }//end of try statement
 
-				// Commented this out just in case it breaks something - MB
-				// keyboard.close();
-
-			}
-         //winningPlayer();  
-			//char winnerIs = gameboard.checkWinner();
-
-			
-			
-			
-	
-			
-		gameboard.winningPlayer();
-			//int winnerIs = gameboard.checkWinner();
-
-			/*
-			* I added these case statements because I wanted to know exactly what
-			* was being returned. This can be shortened when we're finished. - MB
-			*/
-
-         /*
-			switch (winnerIs) {
-=======
-		/*	switch (winnerIs) {
->>>>>>> 11b542419e6bff32eb7d85373c025f3b04038038
-			case 1:
-				System.out.println("You win!");
-				break;
-			case 2:
-				System.out.println("You lose.");
-				break;
-			case 3:
-				System.out.println("Stalemate! Nobody wins.");
-				break;
-			
-         case 79:
-				System.out.println("Returned O");
-				break;
-			case 88:
-				System.out.println("Returned X");
-				break;
-			default:
-				System.out.println("Did not return correct number: " + gameboard.checkWinner());
-				break;
-			}*/
-			// if win == true print you win - MB
-			// if lose == true print you lose - MB
-		}
-
-		/*
-		 * Instead of declaring each type of exception we want to catch I
-		 * figured we can just catch everything
-		 */
+	   //if an error occurs in the program, an exception statment will be thrown
 		catch (Exception e) {
 			System.out.println("Congrats, you broke the program.");
 		}
-	}
-}
+	}//end main method
+}//end tic tac toe class
