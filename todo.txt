@@ -1,12 +1,4 @@
-To Do (Alpha):
-
-* Prompt user to enter another location if their chosen location is full
-
-BUGS FOUND
- 
-  
 To Do (Beta):
-// Start once Alpha is completed
 
 1) Clean up if statements in all Gameboard methods
 2) Take out unneeded comments
@@ -16,4 +8,3 @@ To Do (Beta):
 BACKLOG:
 
 * Add proper description for this repo
-* Ask user to play again
