@@ -3,7 +3,9 @@
 public class Gameboard {
 
 	// the "board" for the game is created in the statement below
-	char[][] gameboard = new char[3][3];
+	char[][] gameboard = {{' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '}};
 	/*
 	 * This variable below stores the winning character and will end up holding
 	 * 'O', 'X' or 'S' for stalemate
@@ -14,8 +16,8 @@ public class Gameboard {
 
 		boolean isValidMove = true;
 
-		if (l == 0 || l == 1 || l == 2) {
-			if (this.gameboard[0][l] == 0)
+		if (l == ' ' || l == 1 || l == 2) {
+			if (this.gameboard[0][l] == ' ')
 				this.gameboard[0][l] = 'X';
 			else {
 				System.out.println("You cannot play there!");
@@ -23,14 +25,14 @@ public class Gameboard {
 			}
 
 		} else if (l == 3 || l == 4 || l == 5) {
-			if (this.gameboard[1][l - 3] == 0)
+			if (this.gameboard[1][l - 3] == ' ')
 				this.gameboard[1][l - 3] = 'X';
 			else {
 				System.out.println("You cannot play there!");
 				isValidMove = false;
 			}
 		} else if (l == 6 || l == 7 || l == 8) {
-			if (this.gameboard[2][l - 6] == 0)
+			if (this.gameboard[2][l - 6] == ' ')
 				this.gameboard[2][l - 6] = 'X';
 			else {
 				System.out.println("You cannot play there!");
@@ -63,54 +65,54 @@ public class Gameboard {
 	public boolean winsNow() {
 
 		// checking for position 0
-		if (this.gameboard[0][1] == 'O' && this.gameboard[0][2] == 'O' && this.gameboard[0][0] == 0
-				|| this.gameboard[1][0] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[0][0] == 0
-				|| this.gameboard[1][1] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[0][0] == 0) {
+		if (this.gameboard[0][1] == 'O' && this.gameboard[0][2] == 'O' && this.gameboard[0][0] == ' '
+				|| this.gameboard[1][0] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[0][0] == ' '
+				|| this.gameboard[1][1] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[0][0] == ' ') {
 			this.gameboard[0][0] = 'O';
 			return true;
 		} // checking for position 1
-		else if (this.gameboard[0][0] == 'O' && this.gameboard[0][2] == 'O' && this.gameboard[0][1] == 0
-				|| this.gameboard[1][1] == 'O' && this.gameboard[2][1] == 'O' && this.gameboard[0][1] == 0) {
+		else if (this.gameboard[0][0] == 'O' && this.gameboard[0][2] == 'O' && this.gameboard[0][1] == ' '
+				|| this.gameboard[1][1] == 'O' && this.gameboard[2][1] == 'O' && this.gameboard[0][1] == ' ') {
 			this.gameboard[0][1] = 'O';
 			return true;
 		} // checking for position 2
-		else if (this.gameboard[0][0] == 'O' && this.gameboard[0][1] == 'O' && this.gameboard[0][2] == 0
-				|| this.gameboard[1][2] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[0][2] == 0
-				|| this.gameboard[1][1] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[0][2] == 0) {
+		else if (this.gameboard[0][0] == 'O' && this.gameboard[0][1] == 'O' && this.gameboard[0][2] == ' '
+				|| this.gameboard[1][2] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[0][2] == ' '
+				|| this.gameboard[1][1] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[0][2] == ' ') {
 			this.gameboard[0][2] = 'O';
 			return true;
 		} // checking for position 3
-		else if (this.gameboard[1][1] == 'O' && this.gameboard[1][2] == 'O' && this.gameboard[1][0] == 0
-				|| this.gameboard[0][0] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[1][0] == 0) {
+		else if (this.gameboard[1][1] == 'O' && this.gameboard[1][2] == 'O' && this.gameboard[1][0] == ' '
+				|| this.gameboard[0][0] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[1][0] == ' ') {
 			this.gameboard[1][0] = 'O';
 			return true;
 		} // checking for position 4
-		else if (this.gameboard[1][0] == 'O' && this.gameboard[1][2] == 'O' && this.gameboard[1][1] == 0
-				|| this.gameboard[0][1] == 'O' && this.gameboard[2][1] == 'O' && this.gameboard[1][1] == 0
-				|| this.gameboard[0][0] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[1][1] == 0
-				|| this.gameboard[0][2] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[1][1] == 0) {
+		else if (this.gameboard[1][0] == 'O' && this.gameboard[1][2] == 'O' && this.gameboard[1][1] == ' '
+				|| this.gameboard[0][1] == 'O' && this.gameboard[2][1] == 'O' && this.gameboard[1][1] == ' '
+				|| this.gameboard[0][0] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[1][1] == ' '
+				|| this.gameboard[0][2] == 'O' && this.gameboard[2][0] == 'O' && this.gameboard[1][1] == ' ') {
 			this.gameboard[1][1] = 'O';
 			return true;
 		} // checking for position 5
-		else if (this.gameboard[1][0] == 'O' && this.gameboard[1][1] == 'O' && this.gameboard[1][0] == 0
-				|| this.gameboard[0][2] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[1][2] == 0) {
+		else if (this.gameboard[1][0] == 'O' && this.gameboard[1][1] == 'O' && this.gameboard[1][0] == ' '
+				|| this.gameboard[0][2] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[1][2] == ' ') {
 			this.gameboard[1][2] = 'O';
 			return true;
 		} // checking for position 6
-		else if (this.gameboard[2][1] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[2][0] == 0
-				|| this.gameboard[0][0] == 'O' && this.gameboard[1][0] == 'O' && this.gameboard[2][0] == 0
-				|| this.gameboard[1][1] == 'O' && this.gameboard[0][2] == 'O' && this.gameboard[2][0] == 0) {
+		else if (this.gameboard[2][1] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[2][0] == ' '
+				|| this.gameboard[0][0] == 'O' && this.gameboard[1][0] == 'O' && this.gameboard[2][0] == ' '
+				|| this.gameboard[1][1] == 'O' && this.gameboard[0][2] == 'O' && this.gameboard[2][0] == ' ') {
 			this.gameboard[2][0] = 'O';
 			return true;
 		} // checking for position 7
-		else if (this.gameboard[2][0] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[2][1] == 0
-				|| this.gameboard[0][1] == 'O' && this.gameboard[1][1] == 'O' && this.gameboard[2][1] == 0) {
+		else if (this.gameboard[2][0] == 'O' && this.gameboard[2][2] == 'O' && this.gameboard[2][1] == ' '
+				|| this.gameboard[0][1] == 'O' && this.gameboard[1][1] == 'O' && this.gameboard[2][1] == ' ') {
 			this.gameboard[2][1] = 'O';
 			return true;
 		} // checking for position 8
-		else if (this.gameboard[2][0] == 'O' && this.gameboard[2][1] == 'O' && this.gameboard[2][2] == 0
-				|| this.gameboard[0][2] == 'O' && this.gameboard[1][2] == 'O' && this.gameboard[2][2] == 0
-				|| this.gameboard[0][0] == 'O' && this.gameboard[1][1] == 'O' && this.gameboard[2][2] == 0) {
+		else if (this.gameboard[2][0] == 'O' && this.gameboard[2][1] == 'O' && this.gameboard[2][2] == ' '
+				|| this.gameboard[0][2] == 'O' && this.gameboard[1][2] == 'O' && this.gameboard[2][2] == ' '
+				|| this.gameboard[0][0] == 'O' && this.gameboard[1][1] == 'O' && this.gameboard[2][2] == ' ') {
 			this.gameboard[2][2] = 'O';
 			return true;
 		}
@@ -183,14 +185,15 @@ public class Gameboard {
 	}
 
 	/**
-	 * Looks in all the locations of the gameboard and determines the best spot to
-	 * play. If there is not an optimal spot the game is a stalemate.
+	 * Looks in all the locations of the gameboard and determines the best spot
+	 * to play. If there is not an optimal spot the game is a stalemate.
 	 */
 	public void bestWin() {
 
 		int wins = -1, bestX = -1, bestY = -1;
+		
 		// checking location 0
-		if (this.gameboard[0][0] == 0) {
+		if (this.gameboard[0][0] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[0][1] != 'X' && this.gameboard[0][2] != 'X')
 				possibleWins++;
@@ -205,7 +208,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 1
-		if (this.gameboard[0][1] == 0) {
+		if (this.gameboard[0][1] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[0][0] != 'X' && this.gameboard[0][2] != 'X')
 				possibleWins++;
@@ -217,7 +220,7 @@ public class Gameboard {
 				bestX = 1;
 			}
 		}
-		if (this.gameboard[0][2] == 0) {
+		if (this.gameboard[0][2] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[0][0] != 'X' && this.gameboard[0][1] != 'X')
 				possibleWins++;
@@ -232,7 +235,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 3
-		if (this.gameboard[1][0] == 0) {
+		if (this.gameboard[1][0] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[1][1] != 'X' && this.gameboard[1][2] != 'X')
 				possibleWins++;
@@ -245,7 +248,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 4
-		if (this.gameboard[1][1] == 0) {
+		if (this.gameboard[1][1] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[1][0] != 'X' && this.gameboard[1][2] != 'X')
 				possibleWins++;
@@ -262,7 +265,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 5
-		if (this.gameboard[1][2] == 0) {
+		if (this.gameboard[1][2] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[1][0] != 'X' && this.gameboard[1][1] != 'X')
 				possibleWins++;
@@ -275,7 +278,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 6
-		if (this.gameboard[2][0] == 0) {
+		if (this.gameboard[2][0] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[2][1] != 'X' && this.gameboard[1][2] != 'X')
 				possibleWins++;
@@ -290,7 +293,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 7
-		if (this.gameboard[2][1] == 0) {
+		if (this.gameboard[2][1] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[2][0] != 'X' && this.gameboard[2][2] != 'X')
 				possibleWins++;
@@ -303,7 +306,7 @@ public class Gameboard {
 			}
 		}
 		// checking location 8
-		if (this.gameboard[2][2] == 0) {
+		if (this.gameboard[2][2] == ' ') {
 			int possibleWins = 0;
 			if (this.gameboard[2][0] != 'X' && this.gameboard[2][1] != 'X')
 				possibleWins++;
@@ -343,7 +346,7 @@ public class Gameboard {
 
 		// top row
 		if ((this.gameboard[0][0] == this.gameboard[0][1]) && (this.gameboard[0][1] == this.gameboard[0][2])) {
-			if (this.gameboard[0][0] == 0)
+			if (this.gameboard[0][0] == ' ')
 				return false;
 			winner = (this.gameboard[0][0]);
 			return true;
@@ -351,7 +354,7 @@ public class Gameboard {
 
 		// middle row
 		if ((this.gameboard[1][0] == this.gameboard[1][1]) && (this.gameboard[1][1] == this.gameboard[1][2])) {
-			if (this.gameboard[1][0] == 0)
+			if (this.gameboard[1][0] == ' ')
 				return false;
 			winner = (this.gameboard[1][0]);
 			return true;
@@ -359,28 +362,28 @@ public class Gameboard {
 
 		// bottom row
 		if ((this.gameboard[2][0] == this.gameboard[2][1]) && (this.gameboard[2][1] == this.gameboard[2][2])) {
-			if (this.gameboard[2][0] == 0)
+			if (this.gameboard[2][0] == ' ')
 				return false;
 			winner = (this.gameboard[2][0]);
 			return true;
 		}
 		// left column
 		if ((this.gameboard[0][0] == this.gameboard[1][0]) && (this.gameboard[1][0] == this.gameboard[2][0])) {
-			if (this.gameboard[0][0] == 0)
+			if (this.gameboard[0][0] == ' ')
 				return false;
 			winner = (this.gameboard[0][0]);
 			return true;
 		}
 		// middle column
 		if ((this.gameboard[0][1] == this.gameboard[1][1]) && (this.gameboard[1][1] == this.gameboard[2][1])) {
-			if (this.gameboard[0][1] == 0)
+			if (this.gameboard[0][1] == ' ')
 				return false;
 			winner = (this.gameboard[0][1]);
 			return true;
 		}
 		// right column
 		if ((this.gameboard[0][2] == this.gameboard[1][2]) && (this.gameboard[1][2] == this.gameboard[2][2])) {
-			if (this.gameboard[0][2] == 0)
+			if (this.gameboard[0][2] == ' ')
 				return false;
 			winner = (this.gameboard[0][2]);
 			return true;
@@ -388,14 +391,14 @@ public class Gameboard {
 
 		// diagonal down
 		if ((this.gameboard[0][0] == this.gameboard[1][1]) && (this.gameboard[1][1] == this.gameboard[2][2])) {
-			if (this.gameboard[0][0] == 0)
+			if (this.gameboard[0][0] == ' ')
 				return false;
 			winner = (this.gameboard[0][0]);
 			return true;
 		}
 		// diagonal up
 		if ((this.gameboard[0][2] == this.gameboard[1][1]) && (this.gameboard[1][1] == this.gameboard[2][0])) {
-			if (this.gameboard[0][2] == 0)
+			if (this.gameboard[0][2] == ' ')
 				return false;
 			winner = (this.gameboard[0][2]);
 			return true;
@@ -403,7 +406,7 @@ public class Gameboard {
 
 		for (int i = 0; i < this.gameboard.length; i++) {
 			for (int j = 0; j < this.gameboard[i].length; j++) {
-				if (this.gameboard[i][j] == 0)
+				if (this.gameboard[i][j] == ' ')
 					return false;
 			}
 		}
