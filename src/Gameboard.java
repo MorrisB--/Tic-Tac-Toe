@@ -4,8 +4,8 @@ public class Gameboard {
 
 	// the "board" for the game is created in the statement below
 	char[][] gameboard = {{' ', ' ', ' '},
-            {' ', ' ', ' '},
-            {' ', ' ', ' '}};
+						  {' ', ' ', ' '},
+						  {' ', ' ', ' '}};
 	/*
 	 * This variable below stores the winning character and will end up holding
 	 * 'O', 'X' or 'S' for stalemate
