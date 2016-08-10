@@ -16,7 +16,7 @@ public class Gameboard {
 
 		boolean isValidMove = true;
 
-		if (l == ' ' || l == 1 || l == 2) {
+		if (l ==  0 || l == 1 || l == 2) {
 			if (this.gameboard[0][l] == ' ')
 				this.gameboard[0][l] = 'X';
 			else {
